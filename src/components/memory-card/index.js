@@ -6,6 +6,11 @@ const memoryCard = () => {
     .memory-card {
       width: 155px;
       height: 155px;
+      position: relative;
+    }
+    .memory-card > .card {
+      width: 100%;
+      height: 100%;
       background-color: #f25a70;
       border-radius: 30px;
       display: flex;
@@ -13,15 +18,21 @@ const memoryCard = () => {
       align-items: center;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
       flex-wrap: nowrap;
-      position: relative;
+      position: absolute;
       cursor: pointer;
     }
-    
-    .memory-card.-front {
+
+    .memory-card.-active > .card {
+      display: none;
+    }
+    .memory-card.-active > .card.-front {
+      display: flex;
+    }
+    .memory-card > .card.-front {
       background-color: white;
     }
     
-    .memory-card.-front::before {
+    .memory-card > .card.-front::before {
       content: "";
       width: 94px;
       height: 94px;
@@ -29,11 +40,11 @@ const memoryCard = () => {
       border-radius: 100%;
       position: absolute;
     }
-    .memory-card > .icon {
+    .memory-card > .card > .icon {
       width: 100px;
     }
     
-    .memory-card.-front > .icon {
+    .memory-card > .card.-front > .icon {
       position: absolute;
       transform: translateY(-10px);
     }
@@ -41,17 +52,44 @@ const memoryCard = () => {
 
   $head.insertBefore($style, null);
 
-  return ({ nameClass, src, alt }) => `
-  <article class="memory-card ${nameClass}">
-    <img
-      src=${src} 
-      alt=${alt} 
-      class="icon"
-      onclick="handleClick()"
-    >
-  </article>
+  return ({ src, alt }) => `
+  <div class="memory-card " 
+    onclick="handleClick(this)">
+
+    <article class="card -front">
+      <img
+        src=${src} 
+        alt=${alt} 
+        class="icon"
+      >
+    </article>
+
+    <article class="card">
+      <img
+        src="/img/icon-collabcode.png" 
+        alt="mascote da collbcode, o gueio" 
+        class="icon"
+      >
+    </article>
+  </div>
 `;
 };
-const handleClick = () => {
-  console.log("object");
+const handleClick = $component => {
+  if (qtdActiveMemoryCard < 2) {
+    $component.classList.toggle("-active");
+  }
+
+  if (qtdActiveMemoryCard === 1) {
+    setTimeout(() => {
+      const $activeMemoryCards = document.querySelectorAll(
+        ".memory-card.-active"
+      );
+
+      $activeMemoryCards.forEach($memoryCard => {
+        $memoryCard.classList.remove("-active");
+      });
+
+      qtdActiveMemoryCard = 0;
+    }, 800);
+  }
 };

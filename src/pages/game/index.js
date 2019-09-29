@@ -3,27 +3,23 @@ const $root = document.querySelector("#root");
 const createMemoryCard = memoryCard();
 
 const $memoryCardC = createMemoryCard({
-  nameClass: "-front",
   src: "/img/icon-c.png",
   alt: "icon de um livro de C++"
 });
 
 const $memoryCardJs = createMemoryCard({
   src: "/img/icon-js.png",
-  alt: "icon de um livro de Javascript",
-  nameClass: "-front"
+  alt: "icon de um livro de Javascript"
 });
 
 const $memoryCardPhp = createMemoryCard({
   src: "/img/icon-php.png",
-  alt: "icon de um livro de PHP",
-  nameClass: "-front"
+  alt: "icon de um livro de PHP"
 });
 
 const $memoryCardWoman = createMemoryCard({
   src: "/img/icon-woman.png",
-  alt: "icon de uma garota codando",
-  nameClass: "-front"
+  alt: "icon de uma garota codando"
 });
 
 const $cardWrapper = createCardWrapper();
