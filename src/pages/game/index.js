@@ -1,6 +1,9 @@
 (() => {
   const $root = document.querySelector("#root");
+  const $cardWrapper = createCardWrapper();
   const createMemoryCard = memoryCard.create();
+  const $scoreBar = scoreBar.create();
+  const $layerStart = layerStart.render("Iniciar");
 
   const $memoryCardC = createMemoryCard({
     src: "/img/icon-c.png",
@@ -22,8 +25,6 @@
     alt: "icon de uma garota codando"
   });
 
-  const $cardWrapper = createCardWrapper();
-
   $cardWrapper.insertAdjacentHTML("beforeend", $memoryCardJs);
   $cardWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
   $cardWrapper.insertAdjacentHTML("beforeend", $memoryCardWoman);
@@ -33,5 +34,7 @@
   $cardWrapper.insertAdjacentHTML("beforeend", $memoryCardPhp);
   $cardWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
 
+  $root.insertAdjacentHTML("afterbegin", $scoreBar);
   $root.insertAdjacentElement("beforeend", $cardWrapper);
+  $root.insertAdjacentHTML("beforeend", $layerStart);
 })();
