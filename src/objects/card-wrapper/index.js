@@ -9,12 +9,14 @@ const createCardWrapper = () => {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
-      padding-top: 15px;
+      padding-top: 10vh;
       width: 100vw;
     }
     
     .card-wrapper > .memory-card {
       margin-bottom: 15px;
+      
+      
     }
   `;
 

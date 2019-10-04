@@ -3,7 +3,7 @@
   const $cardWrapper = createCardWrapper();
   const createMemoryCard = memoryCard.create();
   const $scoreBar = scoreBar.create();
-  const $layerStart = layerStart.render("Iniciar");
+  const $layerStart = layerStart.render("Start");
 
   const $memoryCardC = createMemoryCard({
     src: "/img/icon-c.png",

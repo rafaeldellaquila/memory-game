@@ -22,8 +22,14 @@ const startButton = (() => {
             font-size: 1em;
             cursor: pointer;
             box-shadow: 1px 5px 20px #3a4042;
+            transition: opacity 200ms linear, transform 200ms linear;
+            z-index:3;
+        }
 
-
+        .start-button.-disabled {
+          opacity: 0;
+          transform: translate(-50%, -30%) scale(2);
+         
         }
         
     `;

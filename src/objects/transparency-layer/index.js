@@ -12,6 +12,11 @@ const transparencyLayer = (() => {
         height: 100vh;
         position: absolute;
         top: 0;
+        transition: opacity 300ms 200ms linear;
+        z-index: 2;
+    }
+    .transparency-layer.-disabled {
+      opacity: 0;
     }
     `;
 

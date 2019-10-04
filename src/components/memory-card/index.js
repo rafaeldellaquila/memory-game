@@ -106,8 +106,7 @@ const memoryCard = (() => {
       ) {
         store.score++;
 
-        document.querySelector(".score-bar > .counter").textContent =
-          store.score;
+        document.querySelector(".score-bar .counter").textContent = store.score;
 
         $activeMemoryCards.forEach($memoryCard => {
           $memoryCard.classList.add("-score");
