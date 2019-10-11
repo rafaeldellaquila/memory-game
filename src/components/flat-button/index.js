@@ -8,17 +8,21 @@ const flatButton = (() => {
     const $style = document.createElement("style");
 
     $style.textContent = `
-        .flat-button-${module._id} {
-            background-color: ${active ? "#f25a70" : "#eae6da"};
-            color: ${active ? "#fff" : "#fffcee"};
-            width: 50%;
-            height: 176px;
-            text-transform: uppercase;
-            font-size: 24px;
-            font-weigth: bold;
-            border: none;
-        }
-        
+      .flat-button-${module._id} {
+        box-sizing: border-box;
+        display: inline-flex;
+        justify-content: center;
+        background-color: ${active ? "#f25a70" : "#eae6da"};
+        color: ${active ? "#fff" : "#fffcee"};
+        font-size: 24px;
+        font-weight: bold;
+        width: 50%;
+        height: 176px;
+        text-transform: uppercase;
+        padding-bottom: 20px;
+        border: none;
+      }
+      
     `;
     $head.insertAdjacentElement("beforeend", $style);
   };
