@@ -7,12 +7,12 @@
   const $logoCollabCode = logoCollabCode.render();
   const $titleCollabCode = titleCollabCode.render("welcome!");
   const $logoWrapper = logoWrapper.render($logoCollabCode, $titleCollabCode);
-  const $labelCollabCode = labelCollabCode.render("E-mail");
-  const $inputCollabCode = inputCollabCode.render();
+
+  const $formSignup = formSignup.render();
 
   $root.insertAdjacentHTML("beforeend", $loginButton);
   $root.insertAdjacentHTML("beforeend", $signupButton);
   $root.insertAdjacentHTML("beforeend", $logoWrapper);
-  $root.insertAdjacentHTML("beforeend", $labelCollabCode);
-  $root.insertAdjacentHTML("beforeend", $inputCollabCode);
+
+  $root.insertAdjacentHTML("beforeend", $formSignup);
 })();
