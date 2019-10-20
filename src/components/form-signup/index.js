@@ -1,6 +1,19 @@
 const formSignup = (() => {
   const module = {};
 
+  module._style = () => {
+    const $head = document.querySelector("head");
+    const $style = document.createElement("style");
+
+    $style.textContent = `
+        .form-signup {
+            padding: 0 35px 40px;
+        }
+    `;
+
+    $head.insertAdjacentElement("beforeend", $style);
+  };
+
   module._children = () => {
     const $emailLabelCollabCode = labelCollabCode.render("E-mail");
     const $emailInputCollabCode = inputCollabCode.render();
@@ -16,26 +29,18 @@ const formSignup = (() => {
     );
     const $confirmPasswordInputCollabCode = inputCollabCode.render();
 
+    const $btnCollabCode = btnCollabCode.render("submit");
+
     return `
     ${$emailLabelCollabCode + $emailInputCollabCode}
+
     ${$usernameLabelCollabCode + $usernameInputCollabCode}
+
     ${$passwordLabelCollabCode + $passwordInputCollabCode}
+
     ${$confirmPasswordLabelCollabCode + $confirmPasswordInputCollabCode} 
+    ${$btnCollabCode}
     `;
-  };
-
-  module._style = () => {
-    const $head = document.querySelector("head");
-    const $style = document.createElement("style");
-
-    $style.textContent = `
-        .form-signup {
-            padding-left: 35px;
-            padding-right: 35px;
-        }
-    `;
-
-    $head.insertAdjacentElement("beforeend", $style);
   };
 
   module.render = () => {
