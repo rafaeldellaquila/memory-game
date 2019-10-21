@@ -1,4 +1,4 @@
-(() => {
+const game = () => {
   const $root = document.querySelector("#root");
   const $cardWrapper = createCardWrapper();
   const createMemoryCard = memoryCard.create();
@@ -37,4 +37,4 @@
   $root.insertAdjacentHTML("afterbegin", $scoreBar);
   $root.insertAdjacentElement("beforeend", $cardWrapper);
   $root.insertAdjacentHTML("beforeend", $layerStart);
-})();
+};
