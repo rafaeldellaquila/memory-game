@@ -10,6 +10,7 @@
     "tsc": "vue-tsc -b"
   },
   "dependencies": {
+    "pinia": "^2.3.1",
     "vue": "^3.5.13"
   },
   "devDependencies": {
