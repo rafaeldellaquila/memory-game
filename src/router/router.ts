@@ -1,11 +1,11 @@
 import { createMemoryHistory, createRouter } from 'vue-router'
 import NewGame from '../pages/NewGame.vue'
-import GameBoard from '../pages/GameBoard.vue'
+import GamePage from '../pages/GamePage.vue'
 
 
 const routes = [
   { path: '/', component: NewGame },
-  { path: '/game', component: GameBoard },
+  { path: '/game', component: GamePage },
 ]
 
 const router = createRouter({
