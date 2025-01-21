@@ -3,6 +3,7 @@ import { ref, computed } from 'vue';
 import type { Card } from '../domain/entities/Card';
 import type { Player } from '../domain/entities/Player';
 import { CardFactory } from '../domain/factories/CardFactory';
+import { useApi } from '../composables/useApi';
 
 export const useGameStore = defineStore('game', () => {
   const playerName = ref('');
@@ -40,7 +41,10 @@ export const useGameStore = defineStore('game', () => {
       first.isMatched = true;
       second.isMatched = true;
 
-      if (cards.value.every(card => card.isMatched)) endGame();
+      if (cards.value.every(card => card.isMatched)){
+        useApi().post('scores', { name: playerName.value, rounds: rounds.value });
+        endGame();
+        }
 
     } else {
       setTimeout(() => {
