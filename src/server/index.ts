@@ -15,8 +15,6 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
-
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 

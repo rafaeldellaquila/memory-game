@@ -8,7 +8,7 @@ export class CardFactory {
     values.forEach((value, index) => {
       cards.push(
         { id: index * 2, value, isFlipped: false, isMatched: false },
-        { id: index * 2 + 1, value, isFlipped: false, isMatched: false }
+        { id: index * 2 + 1, value, isFlipped: false, isMatched: false },
       );
     });
 

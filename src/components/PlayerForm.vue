@@ -2,11 +2,9 @@
   <form @submit.prevent="handleSubmit" class="space-y-4">
     <div>
       <label for="name" class="label">Enter your name</label>
-      <input id="name" v-model="name" type="text" required class="input" placeholder="Your name">
+      <input id="name" v-model="name" type="text" required class="input" placeholder="Your name" />
     </div>
-    <button type="submit" class="button">
-      Start Game
-    </button>
+    <button type="submit" class="button">Start Game</button>
   </form>
 </template>
 
@@ -14,7 +12,7 @@
 import { ref } from 'vue';
 import { useGameStore } from '../stores/gameStore';
 import { useRouter } from 'vue-router';
-const router = useRouter()
+const router = useRouter();
 const gameStore = useGameStore();
 const name = ref('');
 

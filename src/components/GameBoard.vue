@@ -12,7 +12,7 @@ import { useGameStore } from '../stores/gameStore';
 import type { Card } from '../domain/entities/Card';
 import UserScore from './game/UserScore.vue';
 import CardBoard from './game/CardBoard.vue';
-import Modal from './shared/Modal.vue';
+import Modal from './game/Modal.vue';
 import Rankings from './Rankings.vue';
 
 const gameStore = useGameStore();

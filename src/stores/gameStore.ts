@@ -41,11 +41,10 @@ export const useGameStore = defineStore('game', () => {
       first.isMatched = true;
       second.isMatched = true;
 
-      if (cards.value.every(card => card.isMatched)){
+      if (cards.value.every((card) => card.isMatched)) {
         useApi().post('scores', { name: playerName.value, rounds: rounds.value });
         endGame();
-        }
-
+      }
     } else {
       setTimeout(() => {
         first.isFlipped = false;
@@ -70,6 +69,6 @@ export const useGameStore = defineStore('game', () => {
     gameCompleted,
     isGameStarted,
     startGame,
-    flipCard
+    flipCard,
   };
 });
