@@ -11,7 +11,8 @@
     "server": "tsx src/server/index.ts",
     "lint": "eslint .",
     "lint:fix": "eslint --fix . ",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "test": "vitest"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -37,6 +38,7 @@
     "tsx": "^4.19.2",
     "typescript": "~5.6.2",
     "vite": "^6.0.5",
+    "vitest": "^3.0.3",
     "vue-tsc": "^2.2.0"
   }
 }
