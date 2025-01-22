@@ -47,7 +47,7 @@ app.post('/scores', (req, res) => {
   res.status(201).json(score);
 });
 
-app.get('/scores', (req, res) => {
+app.get('/scores', (_req, res) => {
   const scores = readScores();
   scores.sort((a, b) => a.rounds - b.rounds);
   res.json(scores);

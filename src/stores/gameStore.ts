@@ -70,5 +70,6 @@ export const useGameStore = defineStore('game', () => {
     isGameStarted,
     startGame,
     flipCard,
+    endGame
   };
 });
